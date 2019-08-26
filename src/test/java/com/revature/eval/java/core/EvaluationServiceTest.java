@@ -148,7 +148,7 @@ public class EvaluationServiceTest {
 		assertEquals(22, evaluationService.getScrabbleScore("quirky"));
 	}
 
-	@Test
+	@Test 
 	public void testALongMixCaseWord() {
 		assertEquals(41, evaluationService.getScrabbleScore("OxyphenButazone"));
 	}
@@ -156,6 +156,7 @@ public class EvaluationServiceTest {
 	/*******************************************************************
 	 * Question 5
 	 ******************************************************************/
+	
 	@Test
 	public void cleansTheNumber() {
 		final String expectedNumber = "2234567890";
@@ -194,6 +195,7 @@ public class EvaluationServiceTest {
 	/*******************************************************************
 	 * Question 6
 	 ******************************************************************/
+	
 	@Test
 	public void countOneWord() {
 		Map<String, Integer> expectedWordCount = new HashMap<>();
@@ -302,6 +304,7 @@ public class EvaluationServiceTest {
 	/*******************************************************************
 	 * Question 8
 	 ******************************************************************/
+	
 	@Test
 	public void testWordBeginningWithA() {
 		assertEquals("appleay", evaluationService.toPigLatin("apple"));
@@ -330,6 +333,7 @@ public class EvaluationServiceTest {
 	/*******************************************************************
 	 * Question 9
 	 ******************************************************************/
+	
 	@Test
 	public void singleDigitsAreArmstrongNumbers() {
 		int input = 5;
@@ -368,6 +372,7 @@ public class EvaluationServiceTest {
 	/*******************************************************************
 	 * Question 10
 	 ******************************************************************/
+	
 
 	@Test
 	public void testPrimeNumber() {
@@ -378,6 +383,7 @@ public class EvaluationServiceTest {
 	public void testSquareOfAPrime() {
 		assertEquals(Arrays.asList(3L, 3L), evaluationService.calculatePrimeFactorsOf(9L));
 	}
+	
 
 	@Test
 	public void testCubeOfAPrime() {
@@ -397,8 +403,9 @@ public class EvaluationServiceTest {
 	/*******************************************************************
 	 * Question 11
 	 ******************************************************************/
-
+	
 	@Test
+
 	public void rotateSingleCharacterWithWrapAround() {
 		EvaluationService.RotationalCipher rotationalCipher = new EvaluationService.RotationalCipher(13);
 		assertEquals("a", rotationalCipher.rotate("n"));
@@ -415,7 +422,7 @@ public class EvaluationServiceTest {
 		EvaluationService.RotationalCipher rotationalCipher = new EvaluationService.RotationalCipher(4);
 		assertEquals("Xiwxmrk 1 2 3 xiwxmrk", rotationalCipher.rotate("Testing 1 2 3 testing"));
 	}
-
+	
 	@Test
 	public void rotatePunctuation() {
 		EvaluationService.RotationalCipher rotationalCipher = new EvaluationService.RotationalCipher(21);
@@ -432,6 +439,7 @@ public class EvaluationServiceTest {
 	/*******************************************************************
 	 * Question 12
 	 ******************************************************************/
+	
 	@Test
 	public void testFirstPrime() {
 		assertThat(evaluationService.calculateNthPrime(1), is(2));
@@ -461,6 +469,7 @@ public class EvaluationServiceTest {
 	/*******************************************************************
 	 * Question 13
 	 ******************************************************************/
+	
 
 	@Test
 	public void testEncodeYes() {
@@ -594,13 +603,13 @@ public class EvaluationServiceTest {
 		assertEquals(LocalDateTime.of(1991, Month.MARCH, 27, 1, 46, 40),
 				evaluationService.getGigasecondDate(LocalDate.of(1959, Month.JULY, 19)));
 	}
-
+	
 	@Test
 	public void withFullTimeSpecified() {
 		assertEquals(LocalDateTime.of(2046, Month.OCTOBER, 2, 23, 46, 40),
 				evaluationService.getGigasecondDate(LocalDateTime.of(2015, Month.JANUARY, 24, 22, 0, 0)));
 	}
-
+	
 	@Test
 	public void withFullTimeSpecifiedAndDayRollover() {
 		assertEquals(LocalDateTime.of(2046, Month.OCTOBER, 3, 1, 46, 39),
@@ -695,20 +704,21 @@ public class EvaluationServiceTest {
 	public void testSingleAdditionWithNegativeNumbers() {
 		assertEquals(-11, evaluationService.solveWordProblem("What is -1 plus -10?"));
 	}
-
+	
+	
 	@Test
 	public void testSingleSubtraction() {
 		assertEquals(16, evaluationService.solveWordProblem("What is 4 minus -12?"));
 	}
-
+	
 	@Test
 	public void testSingleMultiplication() {
 		assertEquals(-75, evaluationService.solveWordProblem("What is -3 multiplied by 25?"));
 	}
-
+	
 	@Test
 	public void testSingleDivision() {
 		assertEquals(-11, evaluationService.solveWordProblem("What is 33 divided by -3?"));
 	}
-
+  
 }
